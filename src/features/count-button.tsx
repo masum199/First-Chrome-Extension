@@ -9,7 +9,7 @@ export const CountButton = () => {
   const fetchLocation = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`https://ipinfo.io/103.167.208.10?token=2332b54541f616`);
+      const response = await axios.get(`https://ipinfo.io/103.167.208.10?token=${process.env.PLASMO_PUBLIC_MY_DATA}`);
       const { country, city } = response.data;
       setCountry(country);
       setCity(city);
